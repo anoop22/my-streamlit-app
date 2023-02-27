@@ -1,4 +1,0 @@
-pip install openai
-pip install plantuml
-pip install ipywidgets
-pip install streamlit
