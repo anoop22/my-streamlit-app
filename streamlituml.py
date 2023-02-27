@@ -25,7 +25,7 @@ if st.button("Generate diagram"):
     # use the OpenAI API to generate PlantUML syntax
     response = openai.Completion.create(
         engine="text-davinci-003",
-        prompt=f"I just output the PlantUML syntax based on input text and nothing else. I generate the example using plantuml's existing syntax. PlantUML syntax for a {type_input} based on the following text:\n\n Start of Text \n\n{user_input} \n\n End of Text",
+        prompt=f"I just output the PlantUML code based on input text and nothing else. I generate the plantuml code using plantuml's existing syntax. PlantUML code for generating {type_input} based on the following text:\n\n Start of Text \n\n{user_input} \n\n End of Text",
         max_tokens=1024,
         n=1,
         stop=None,
@@ -34,6 +34,8 @@ if st.button("Generate diagram"):
 
     # extract the generated PlantUML syntax from the API response
     generated_syntax = response.choices[0].text.strip()
+    
+  
     
     #st.text_input("generated_syntax", generated_syntax)
     
@@ -47,5 +49,5 @@ if st.button("Generate diagram"):
 
     # display the diagram using Streamlit's Image component
     st.image(my_diagram)
+     st.code(generated_syntax)
     
-    st.code(generated_syntax)
