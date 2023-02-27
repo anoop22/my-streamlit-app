@@ -1,4 +1,4 @@
-import openai
-import plantuml
-import ipywidgets
-import streamlit
+pip install openai
+pip install plantuml
+pip install ipywidgets
+pip install streamlit
