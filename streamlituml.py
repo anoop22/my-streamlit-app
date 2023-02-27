@@ -12,8 +12,7 @@ import openai
 import plantuml
 
 # initialize the OpenAI API with your API key
-#key_input = st.text_input("Enter your Open AI API Key:")
-openai.api_key = "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"
+key_input = st.text_input("Enter your Open AI API Key:")
 
 # specify the URL for the PlantUML server
 url = "http://www.plantuml.com/plantuml/img/"
