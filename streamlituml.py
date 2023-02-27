@@ -38,6 +38,10 @@ if st.button("Generate diagram"):
     # generate the diagram using a different variable name than Image 
     diagram_bytes = plantuml.PlantUML(url=url).processes(generated_syntax)
     my_diagram = diagram_bytes
+    
+    # display the diagram using Image class from IPython.display 
+    from IPython.display import Image 
+    Image(my_diagram)
 
     # display the diagram using Streamlit's Image component
     st.image(my_diagram)
