@@ -36,7 +36,7 @@ if st.button("Generate diagram"):
     generated_syntax = response.choices[0].text.strip()
     
     #st.text_input("generated_syntax", generated_syntax)
-    st.code(generated_syntax, height=200, wrap=True)
+    st.code(generated_syntax)
 
     # generate the diagram using a different variable name than Image 
     diagram_bytes = plantuml.PlantUML(url=url).processes(generated_syntax)
