@@ -35,6 +35,8 @@ if st.button("Generate diagram"):
     # extract the generated PlantUML syntax from the API response
     generated_syntax = response.choices[0].text.strip()
     
+    st.code(generated_syntax)
+    
     #st.text_input("generated_syntax", generated_syntax)
     
     # generate the diagram using a different variable name than Image 
@@ -48,4 +50,3 @@ if st.button("Generate diagram"):
     # display the diagram using Streamlit's Image component
     st.image(my_diagram)
     
-    st.code(generated_syntax)
