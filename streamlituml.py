@@ -8,7 +8,6 @@ Original file is located at
 """
 
 # install required libraries
-!pip install streamlit
 !pip install openai
 !pip install plantuml
 !pip install ipywidgets
