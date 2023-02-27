@@ -25,7 +25,7 @@ if st.button("Generate diagram"):
     # use the OpenAI API to generate PlantUML syntax
     response = openai.Completion.create(
         engine="text-davinci-003",
-        prompt=f"I just output the PlantUML syntax based on input text and nothing else. I generate the example using plantuml's existing syntax. PlantUML syntax for a {type_input} based on the following text:\n\n{user_input}",
+        prompt=f"I just output the PlantUML syntax based on input text and nothing else. I generate the example using plantuml's existing syntax. PlantUML syntax for a {type_input} based on the following text:\n\n Start of Text \n\n{user_input} \n\n End of Text",
         max_tokens=1024,
         n=1,
         stop=None,
