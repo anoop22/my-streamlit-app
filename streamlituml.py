@@ -34,6 +34,8 @@ if st.button("Generate diagram"):
 
     # extract the generated PlantUML syntax from the API response
     generated_syntax = response.choices[0].text.strip()
+    
+    st.text_input("generated_syntax", generated_syntax)
 
     # generate the diagram using a different variable name than Image 
     diagram_bytes = plantuml.PlantUML(url=url).processes(generated_syntax)
