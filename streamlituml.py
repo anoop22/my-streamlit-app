@@ -44,4 +44,4 @@ if st.button("Generate diagram"):
     Image(my_diagram)
 
     # display the diagram using Streamlit's Image component
-    st.image(my_diagram)
+    st.image(my_diagram, width=800, height=600)
