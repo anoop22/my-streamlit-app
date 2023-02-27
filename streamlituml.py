@@ -37,7 +37,7 @@ if st.button("Generate diagram"):
 
     # generate the diagram using a different variable name than Image 
     diagram_bytes = plantuml.PlantUML(url=url).processes(generated_syntax)
-    my_diagram = diagram_bytes.decode('utf-8')
+    my_diagram = diagram_bytes
 
     # display the diagram using Streamlit's Image component
     st.image(my_diagram)
