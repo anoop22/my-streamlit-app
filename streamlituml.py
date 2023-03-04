@@ -26,11 +26,13 @@ if st.button("Generate diagram"):
     response = openai.Completion.create(
         engine="gpt-3.5-turbo",
         prompt=f"I just output the PlantUML code based on input text and nothing else. I generate the plantuml code using plantuml's existing syntax. PlantUML code for generating {type_input} based on the following text:\n\n Start of Text \n\n{user_input} \n\n End of Text",
-        max_tokens=1024,
+        max_tokens=1024,cd cd cd 
         n=1,
         stop=None,
         temperature=0.7,
     )
+       
+    st.code(generated_syntax)
 
     # extract the generated PlantUML syntax from the API response
     generated_syntax = response.choices[0].text.strip()
