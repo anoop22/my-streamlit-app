@@ -24,9 +24,10 @@ type_input = st.text_input("Enter which kind of diagram (one word only): ")
 if st.button("Generate diagram"):
     # use the OpenAI API to generate PlantUML syntax
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-3.5-turbo",
+        #engine="text-davinci-003",
         prompt=f"I just output the PlantUML code based on input text and nothing else. I generate the plantuml code using plantuml's existing syntax. PlantUML code for generating {type_input} based on the following text:\n\n Start of Text \n\n{user_input} \n\n End of Text",
-        max_tokens=1024,cd cd cd 
+        max_tokens=1024,
         n=1,
         stop=None,
         temperature=0.7,
