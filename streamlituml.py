@@ -33,7 +33,7 @@ if st.button("Generate diagram"):
         temperature=0.7,
     )
        
-    st.code(generated_syntax)
+    #st.code(generated_syntax)
 
     # extract the generated PlantUML syntax from the API response
     generated_syntax = response.choices[0].text.strip()
