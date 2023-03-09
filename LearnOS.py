@@ -31,7 +31,7 @@ def calculate_embeddings(text):
 
 # Calculate embeddings for each text and create a FAISS index
 embeddings = [calculate_embeddings(text) for text in texts]
-docsearch = FAISS.from_embeddings(embeddings)
+docsearch = FAISS.from_texts(texts, embeddings)
 
 # Get the user query
 query = st.text_input("Please ask any question on OS:" )
