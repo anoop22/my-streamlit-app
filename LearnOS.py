@@ -6,13 +6,18 @@
 # !pip install openai
 
 # import the modules
-from PyPDF2 import PdfReader
+#from PyPDF2 import PdfReader
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import ElasticVectorSearch, Pinecone, Weaviate, FAISS
 import os
 import openai
 from google.colab import files
+
+# initialize the OpenAI API with your API key
+openai.api_key = st.secrets["api_secret"]
+
+
 
 # uploaded_file = files.upload()
 # # Get the file name and path
@@ -54,7 +59,10 @@ with open('texts.pkl', 'rb') as f:
 
 docsearch = FAISS.from_texts(texts, new_docsearch)
 
-query = input("Please ask any question:" )
+#query = input("Please ask any question:" )
+
+query = st.text_input("Please ask any question on OS:" )
+
 docs = docsearch.similarity_search(query)
 
 context = docs[0].page_content
@@ -79,5 +87,7 @@ response = openai.Completion.create(
     
 # Extract the answer from the response
 answer = response.choices[0].text.strip()
-    
-print (answer)
+ 
+st.text(answer)
+ 
+#print (answer)
