@@ -17,7 +17,7 @@ import streamlit as st
 #from google.colab import files
 
 # initialize the OpenAI API with your API key
-openai.api_key = st.secrets["api_secret"]
+#openai.api_key = st.secrets["api_secret"]
 
 
 
@@ -56,7 +56,7 @@ openai.api_key = st.secrets["api_secret"]
 #with open("foo.pkl", 'rb') as f:
 #    new_docsearch = pickle.load(f)
 
-#openai.api_key = st.secrets["api_secret"]
+openai.api_key = st.secrets["api_secret"]
 
 embeddings = OpenAIEmbeddings()
 
