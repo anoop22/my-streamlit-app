@@ -12,6 +12,8 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import ElasticVectorSearch, Pinecone, Weaviate, FAISS
 import os
 import openai
+import streamlit as st
+
 #from google.colab import files
 
 # initialize the OpenAI API with your API key
