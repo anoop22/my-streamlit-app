@@ -56,7 +56,7 @@ openai.api_key = st.secrets["api_secret"]
 #with open("foo.pkl", 'rb') as f:
 #    new_docsearch = pickle.load(f)
 
- embeddings = OpenAIEmbeddings()
+embeddings = OpenAIEmbeddings()
 
 with open('texts.pkl', 'rb') as f:
     texts = pickle.load(f)
