@@ -52,14 +52,16 @@ openai.api_key = st.secrets["api_secret"]
 #     new_docsearch = pickle.load(f)
 
 
-import pickle
-with open("foo.pkl", 'rb') as f:
-    new_docsearch = pickle.load(f)
+#import pickle
+#with open("foo.pkl", 'rb') as f:
+#    new_docsearch = pickle.load(f)
+
+ embeddings = OpenAIEmbeddings()
 
 with open('texts.pkl', 'rb') as f:
     texts = pickle.load(f)
 
-docsearch = FAISS.from_texts(texts, new_docsearch)
+docsearch = FAISS.from_texts(texts, embeddings)
 
 #query = input("Please ask any question:" )
 
